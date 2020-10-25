@@ -15,3 +15,9 @@ The output from the regression model is then compared against the results produc
 
 The nn.py is similar to regression.py, but instead of using regression model, it uses neural network. Right now, only the fully connected neural network is used.
 Recurrent neural network might provides better predictions but is currently under construction.
+
+# Regression result
+![Regression result](/figures/regression.png)
+
+# Simple NN result
+![Simple NN result](/figures/simple_nn.png)
