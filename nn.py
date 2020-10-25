@@ -59,7 +59,7 @@ def main():
     _, x_train, y_train = read_data("sim_data_train.csv")
     t, x_test, y_test = read_data("sim_data_test.csv")
 
-    nn_type = rnn
+    nn_type = simple_nn
 
     if nn_type == rnn or nn_type == cnn:
         batch_size = 100
@@ -71,7 +71,7 @@ def main():
         x_test_processed, y_test_processed = x_test, y_test
 
     model = nn_type()
-    model.summary()
+    #model.summary()
     loss_fn = tf.keras.losses.MeanSquaredError(name='mean_squared_error')
     model.compile(optimizer='adam',
                   loss=loss_fn,

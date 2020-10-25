@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import tensorflow as tf
 
 
 def read_data(file_name):
@@ -80,7 +81,8 @@ def main():
     if plot:
         plot_predict_vs_actual(time=t, vdd=x_test[:, 1], inp=x_test[:, 2], inn=x_test[:, 3], y_predict=y_predict, y=y_test)
 
-    print("Total square error: ", calc_error(y_predict, y_test))
+    loss_fn = tf.keras.losses.MeanSquaredError(name='mean_squared_error')
+    print("loss = ", loss_fn(y_test.reshape(-1, 1), y_predict).numpy())
 
 
 if __name__ == "__main__":
